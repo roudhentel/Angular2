@@ -1,0 +1,20 @@
+<h1>Hello Angular 2</h1>
+<p>Sample of recursive component</p>
+<div>
+    <ul class="nav nav-tabs">
+        <li [class.active]="i === 0" *ngFor="let area of listArea; let i = index;">
+            <a data-toggle="tab" [attr.data-target]="'#' + area.Name">{{area.Name}}</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div [attr.id]="area.Name" class="tab-pane fade in" [class.active]="i === 0"
+             *ngFor="let area of listArea; let i = index;">
+            <h3>{{area.Name}}</h3>
+
+            <heading-display *ngFor="let he of area.ListHeading"
+                             [he]="he">
+            </heading-display>
+        </div>
+    </div>
+</div>

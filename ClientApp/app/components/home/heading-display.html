@@ -1,0 +1,13 @@
+﻿<div [style.padding-left]="(he.Level * 25) +'px'">
+    <h4>{{he.Description}}</h4>
+
+    <ul>
+        <li *ngFor="let li of he.ListLineitem">
+            {{li.Description}}
+        </li>
+    </ul>
+
+    <heading-display *ngFor="let hesub of he.ListHeading"
+                     [he]="hesub">
+    </heading-display>
+</div>
